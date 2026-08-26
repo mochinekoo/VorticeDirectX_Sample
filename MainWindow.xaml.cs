@@ -17,7 +17,7 @@ namespace VorticeDirectX_Sample
     /// </summary>
     public partial class MainWindow : Window {
 
-        public Render DrawRender { get; private set; } = new Render();
+        public static MainRender MainRender { get; private set; } = new MainRender();
 
         public MainWindow() {
             InitializeComponent();
@@ -28,15 +28,15 @@ namespace VorticeDirectX_Sample
         }
 
         public void LoadViewSurface(object? sender, DrawingSurfaceEventArgs e) {
-            DrawRender.Init(e);
+            MainRender.Init(e);
         }
 
         public void DrawViewSurface(object? sender, DrawEventArgs e) {
-            DrawRender.Draw(e);
+            MainRender.Draw(e);
         }
 
         public void UnLoadViewSurface(object? sender, DrawingSurfaceEventArgs e) {
-            DrawRender.Release(e);
+            
         }
     }
 }
